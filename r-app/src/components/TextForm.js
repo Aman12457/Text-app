@@ -51,17 +51,17 @@ export default function TextForm(props) {
   
   <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode ==='dark'?'grey':'white', color:props.mode ==='dark'?'white':'black'}}id="myBox" rows="8"></textarea> 
   </div>
-  <button className="btn btn-primary mx-1" onClick={handleUpClick}>To UpperCaase</button>
-  <button className="btn btn-primary mx-1" onClick={handleLoClick}>To LowerCase</button>
-  <button className="btn btn-primary mx-1" onClick={handleClearClick}>To ClearText</button>
-  <button className="btn btn-primary mx-1" onClick={handleCopyClick}>copy to clipboard</button>
-  <button className="btn btn-primary mx-1" onClick={handlePasteClick}>Paste from  clipboard</button>
+  <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>To UpperCaase</button>
+  <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>To LowerCase</button>
+  <button className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>To ClearText</button>
+  <button className="btn btn-primary mx-1 my-1" onClick={handleCopyClick}>copy to clipboard</button>
+  <button className="btn btn-primary mx-1 my-1" onClick={handlePasteClick}>Paste from  clipboard</button>
   
   </div>  
   <div className='container my-3'>
     <h2>Your text summary</h2>
     <p> {text.length} characters and {
-    text.length ===0? 0 :text.split(" ").length  } words  </p>
+    text.split(" ").filter((element)=>{return element.length!==0}).length  } words  </p>
     <p>{0.008*text.length ===0? 0 :0.008*text.split(" ").length} minutes to read</p>
     <h2>Preview</h2>
     <p>{text}</p>
