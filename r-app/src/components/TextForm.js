@@ -51,11 +51,11 @@ export default function TextForm(props) {
   
   <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode ==='dark'?'grey':'white', color:props.mode ==='dark'?'white':'black'}}id="myBox" rows="8"></textarea> 
   </div>
-  <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>To UpperCaase</button>
-  <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>To LowerCase</button>
-  <button className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>To ClearText</button>
-  <button className="btn btn-primary mx-1 my-1" onClick={handleCopyClick}>copy to clipboard</button>
-  <button className="btn btn-primary mx-1 my-1" onClick={handlePasteClick}>Paste from  clipboard</button>
+  <button className="btn btn-primary mx-1 my-1" disabled={text.length===0} onClick={handleUpClick}>To UpperCaase</button>
+  <button className="btn btn-primary mx-1 my-1" disabled={text.length===0} onClick={handleLoClick}>To LowerCase</button>
+  <button className="btn btn-primary mx-1 my-1" disabled={text.length===0} onClick={handleClearClick}>To ClearText</button>
+  <button className="btn btn-primary mx-1 my-1" disabled={text.length===0} onClick={handleCopyClick}>copy to clipboard</button>
+  <button className="btn btn-primary mx-1 my-1"  onClick={handlePasteClick}>Paste from  clipboard</button>
   
   </div>  
   <div className='container my-3'>
